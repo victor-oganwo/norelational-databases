@@ -13,16 +13,15 @@ async function main() {
 
   // TODO: delete all existing documents from the users collection
   // Hint: User.deleteMany({})
-
+    await User.deleteMany({})
   // TODO: delete all existing documents from the posts collection
-
-  // TODO: insert all users from usersData into the database
-  // Hint: User.insertMany(usersData)
-
+    await Post.deleteMany({})
+    await User.insertMany(usersData)
   // TODO: insert all posts from postsData into the database
-
+    await Post.insertMany(postsData)
   // TODO: log how many users and posts were inserted
   // Hint: User.countDocuments() returns the total count
+    await User.countDocuments({})
 
   await mongoose.disconnect();
 }
